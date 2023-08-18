@@ -1,0 +1,95 @@
+.BasketCart{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    border: 1px solid #ccc;
+    
+}
+
+.basketItemCountBtn{
+    display: flex;
+    flex-direction:column ;
+    width: 35px;
+    height: 100px;
+}
+
+.basketItemCountBtn button{
+    height: 100%;
+    background-color: transparent;
+    border: 1px solid #ccc;
+}
+
+.basketItemCountBtn button:hover{
+    background-color: #cccccc2c;
+    transition: .3s;
+}
+
+.basketItemImg{
+    height: 100%;
+    width: 100px;
+}
+
+.basketItemImg img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.basketItemAbout{
+    display: flex;
+    flex-direction:column;
+    padding-left: 10px;
+}
+
+.basketItemColorSize{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.basketItemColorSize p{
+    margin: 0px;
+    font-size: 12px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    color: #666464;
+}
+
+.basketItemName p{
+    font-weight: 600;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.basketItemColorSize span{
+    font-size: 14px;
+    font-weight: 600;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.price{
+    display: flex;
+    align-items: center;
+    margin-left: 70px;
+}
+
+.price p{
+    font-weight: 600;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.basketDeleteBtn{
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+}
+
+.basketDeleteBtn button{
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 40px;
+    background-color: transparent;
+}
+
+.basketDeleteBtn button:hover{
+    background-color: #cccccc2c;
+}

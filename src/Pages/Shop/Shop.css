@@ -1,0 +1,19 @@
+.shop{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shopContainer{
+    width: 85%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+
+
+
+
+
+

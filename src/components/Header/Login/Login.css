@@ -1,0 +1,29 @@
+.login button{
+    padding: 12px;
+}
+
+.login{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    
+}
+
+.signuppp{
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+.signinnn{
+    background-color:#F2F2F2 ;
+    color: #797878;
+    border: 1px solid #ccc;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+}

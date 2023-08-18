@@ -1,0 +1,136 @@
+.signUpFlex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
+.signUp{
+    height: 460px;
+    width: 53%;
+    border: 1px solid #C5C5C5;
+
+}
+
+.top{
+    width: 100%;
+    height: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom{
+    width: 100%;
+    height: 15%;
+    background-color: blue;
+}
+.signUpContainer{
+    width: 92%;
+    height: 82%;
+    
+}
+
+.flexForm{
+    display: flex;
+}
+
+.signUpForm{
+    width: 60%;
+    height: 210px;
+}
+
+.contactSignUp{
+    width: 40%;
+    height: 243px;
+}
+
+.signUpContainer h4{
+    margin-top: 0px;
+    font-weight: 500;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.labelInput{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.labelInput input{
+    background-color: transparent;
+    width: 300px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    outline: none;
+}
+
+.labelInput label{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.signUpForm button{
+    cursor: pointer;
+    margin: 20px 0px 0px 218px;
+    padding: 15px;
+    font-weight: 500;
+    font-size: 15px;
+    border: 1px solid black;
+    color: white;
+    background-color: black;
+}
+
+.contactSignUp{
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contactSignUp div{
+    cursor: pointer;
+    width: 250px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.facebook{
+    background-color: #0078FF;
+    color: white;
+}
+
+.google{
+    border: 1px solid #ccc;
+}
+
+.github{
+    background-color: #24292D;
+    color: white;
+}
+
+.bottom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    background-color: #F2F2F2;
+}
+
+.bottom p{
+    font-size: 12px;
+    font-weight: 600;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.bottom button{
+    cursor: pointer;
+    color: #3c444a;
+    padding: 10px;
+    font-weight: 600;
+    border: 1px solid #ccc;
+}
