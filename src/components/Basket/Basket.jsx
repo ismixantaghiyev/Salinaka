@@ -1,6 +1,18 @@
 import React, { useEffect } from 'react'
 import "./Basket.css"
 import BasketItem from '../BasketItem/BasketItem'
+import { motion } from "framer-motion";
+
+
+const containerisi = {
+    visible: {
+        transition: {
+            delayChildren: 0.3,
+            staggerChildren: 0.2
+        }
+    }
+}
+
 
 function Basket({addedToBasket, setAddedToBasket, open, setOpen, dataArray, setDataArray }) {
 
@@ -47,12 +59,16 @@ function Basket({addedToBasket, setAddedToBasket, open, setOpen, dataArray, setD
                             <button style={{ cursor: dataArray.length == 0 ? 'no-drop' : 'pointer' }} onClick={() => setDataArray([])} >Clear Basket</button>
                         </div>
                     </div>
-                    <div className="itemsBasket">
+                    <motion.div
+                    initial="hidden"
+                    animate="visible"
+                    variants={containerisi}
+                    className="itemsBasket">
                         <div className='empty' style={{ display: dataArray.length == 0 ? "block" : "none" }}>
                             <p>Your basket is empty</p>
                         </div>
                         {dataArray.map(item => <BasketItem addedToBasket={addedToBasket} setAddedToBasket={setAddedToBasket} {...item} key={item.id} dataArray={dataArray} setDataArray={setDataArray} />)}
-                    </div>
+                    </motion.div>
                     <hr />
                     <div className='subtotalAll'>
                         <div className='subtotal'>

@@ -15,9 +15,8 @@ const itemisi = {
     }
 }
 
-function ShopItem({ addedToBasket, setAddedToBasket, price, name, category, img, dataArray, setDataArray, size, id }) {
-    
-    // const [addedToBasket, setAddedToBasket] = useState(false);
+function ShopItem({ price, name, category, img, dataArray, setDataArray, size, id }) {
+
 
     const addBasket = () => {
         const productIndex = dataArray.findIndex(index => index.name === name)
@@ -28,25 +27,24 @@ function ShopItem({ addedToBasket, setAddedToBasket, price, name, category, img,
             })
         }
         else {
-            setDataArray(prev => [...prev, { name: name, category: category, img: img, quantity: 1, price: price, size: size, id: id }])
+            setDataArray(prev => [...prev, { name, category, img, quantity: 1, price, size, id, status: true }])
         }
-        setAddedToBasket(true);
-        console.log(id);
     }
 
     const shopDelete = () => {
         const shopFilter = dataArray.filter(item => item.id !== id)
         setDataArray(shopFilter);
-        setAddedToBasket(false);
     }
 
+    const activeData = dataArray.find(item => item.id == id)
+    console.log(activeData?.status);
     return (
         <motion.div
             variants={itemisi}
-            style={{ border: addedToBasket ? "1px solid #A4A3A3" : "1px solid #ece9e9", boxShadow: addedToBasket ? "rgba(149, 157, 165, 0.2) 0px 8px 24px;" : "none" }} className='shopAll'>
+            style={{ border: activeData?.status ? "1px solid #A4A3A3" : "1px solid #ece9e9", boxShadow: activeData?.status ? "rgba(149, 157, 165, 0.2) 0px 8px 24px;" : "none" }} className='shopAll'>
             <div className="shopImg">
                 <img src={img} alt={name} />
-                <p style={{ display: addedToBasket ? "block" : "none" }}><LiaCheckSolid /></p>
+                <p style={{ display: activeData?.status ? "block" : "none" }}><LiaCheckSolid /></p>
             </div>
             <div className="shopAbout">
                 <div className='shopnameKata'>
@@ -58,7 +56,7 @@ function ShopItem({ addedToBasket, setAddedToBasket, price, name, category, img,
                 </div>
             </div>
             <div className='shopButton'>
-                {addedToBasket ? <div style={{ background: "white", color: "black" }} className='shopButton' onClick={shopDelete}><p>Remove from basket</p></div> : <div className='shopButton' onClick={addBasket}><p>Add to basket</p></div>}
+                {activeData?.status ? <div style={{ background: "white", color: "black" }} className='shopButton' onClick={shopDelete}><p>Remove from basket</p></div> : <div className='shopButton' onClick={addBasket}><p>Add to basket</p></div>}
             </div>
         </motion.div>
     )

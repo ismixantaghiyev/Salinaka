@@ -1,5 +1,18 @@
 import React, { useState } from 'react'
 import "./BasketItem.css"
+import { motion } from "framer-motion";
+
+
+const itemisi = {
+    hidden: {
+        opacity: 0,
+        translateY: 20
+    },
+    visible: {
+        opacity: 1,
+        translateY: 0
+    }
+}
 
 function BasketItem({addedToBasket, setAddedToBasket, quantity, name, img, price, size, id, dataArray, setDataArray }) {
 
@@ -27,7 +40,9 @@ function BasketItem({addedToBasket, setAddedToBasket, quantity, name, img, price
 
     return (
         <div>
-            <div className="BasketCart">
+            <motion.div
+            variants={itemisi}
+            className="BasketCart">
                 <div className='basketItemCountBtn'>
                     <button onClick={plus}>+</button>
                     <button onClick={minus} style={{ cursor: quantity == 1 ? 'no-drop' : 'pointer' }} >-</button>
@@ -49,7 +64,7 @@ function BasketItem({addedToBasket, setAddedToBasket, quantity, name, img, price
                 <div className="basketDeleteBtn">
                     <button onClick={deleteItem}> X </button>
                 </div>
-            </div>
+            </motion.div>
         </div>
     )
 }

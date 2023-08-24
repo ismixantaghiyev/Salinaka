@@ -8,6 +8,7 @@ import { Route, Routes, useNavigate } from 'react-router-dom'
 import Shop from './Pages/Shop/Shop'
 import Feature from './Pages/Feature/Feature'
 import Recommended from './Pages/Recommended/Recommended'
+import ErrorElement from './ErrorElement'
 
 
 function AppProject() {
@@ -113,16 +114,14 @@ function AppProject() {
             img: "https://firebasestorage.googleapis.com/v0/b/salinaka-ecommerce.appspot.com/o/products%2FaubOenOJu42CNp4zXTLX?alt=media&token=1d5fd281-b9cc-499b-94a5-225273b1eabc"
         },
     ]
+    
     const [value, setValue] = useState("")
     const [addedToBasket, setAddedToBasket] = useState(false);
     const inputSearch = (e) => {
         setValue(e.target.value)
     }
-    const navigate = useNavigate()
     const filterData = data.filter(item => item.name.toLowerCase().startsWith(value.toLowerCase()))
-    useEffect(() => {
-        navigate("/")
-    }, [])
+
 
     return (
         <div>
@@ -134,6 +133,8 @@ function AppProject() {
                 <Route path="signin" element={<SignIn />} />
                 <Route path="signup" element={<SignUp />} />
                 <Route path="/" element={<Main filterData={filterData} dataArray={dataArray} setDataArray={setDataArray} data={data} />} />
+                <Route path="*" element={<ErrorElement />} />
+
             </Routes>
             <Footer />
         </div>
