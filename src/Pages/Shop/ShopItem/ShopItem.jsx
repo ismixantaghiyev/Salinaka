@@ -37,7 +37,7 @@ function ShopItem({ price, name, category, img, dataArray, setDataArray, size, i
     }
 
     const activeData = dataArray.find(item => item.id == id)
-    console.log(activeData?.status);
+    
     return (
         <motion.div
             variants={itemisi}
