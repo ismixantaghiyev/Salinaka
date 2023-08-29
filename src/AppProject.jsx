@@ -1,19 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import Header from './components/Header/Header'
 import Main from './components/Main/Main'
 import Footer from './components/Footer/Footer'
 import SignIn from './Pages/SignIn/SignIn'
 import SignUp from './Pages/SignUp/SignUp'
-import { Route, Routes, useNavigate } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import Shop from './Pages/Shop/Shop'
 import Feature from './Pages/Feature/Feature'
 import Recommended from './Pages/Recommended/Recommended'
 import ErrorElement from './ErrorElement'
 import ShopElement from './Pages/Shop/shopElement/ShopElement'
 
-
+export const StateContext = createContext();
 function AppProject() {
-    // useEffect(()=> window.scrollTo(0,0),[])
     const [dataArray, setDataArray] = useState([])
     const data = [
         {
@@ -64,8 +63,6 @@ function AppProject() {
             category: "Sunglasses",
             img: "https://firebasestorage.googleapis.com/v0/b/salinaka-ecommerce.appspot.com/o/products%2FbS1hHdO7NvbR1yN5ZPlR?alt=media&token=809a3249-f83d-4aec-b134-34a65ce2ce10"
         },
-
-
         {
             size: "18mm",
             id: 7,
@@ -115,7 +112,7 @@ function AppProject() {
             img: "https://firebasestorage.googleapis.com/v0/b/salinaka-ecommerce.appspot.com/o/products%2FaubOenOJu42CNp4zXTLX?alt=media&token=1d5fd281-b9cc-499b-94a5-225273b1eabc"
         },
     ]
-    
+
     const [value, setValue] = useState("")
     const [addedToBasket, setAddedToBasket] = useState(false);
     const inputSearch = (e) => {
@@ -123,20 +120,27 @@ function AppProject() {
     }
     const filterData = data.filter(item => item.name.toLowerCase().startsWith(value.toLowerCase()))
 
+    const values = {
+        dataArray,
+        setDataArray,
+    };
 
     return (
         <div>
-            <Header addedToBasket={addedToBasket} setAddedToBasket={setAddedToBasket} value={value} inputSearch={inputSearch} data={data} dataArray={dataArray} setDataArray={setDataArray} />
-            <Routes>
-                <Route path="recommended" element={<Recommended filterData={filterData} dataArray={dataArray} setDataArray={setDataArray} data={data} />} />
-                <Route path="feature" element={<Feature filterData={filterData} dataArray={dataArray} setDataArray={setDataArray} data={data} />} />
-                <Route path="shop" element={<Shop addedToBasket={addedToBasket} setAddedToBasket={setAddedToBasket} filterData={filterData} dataArray={dataArray} setDataArray={setDataArray} data={data}/>} />c
-                <Route path="shop/:id" element={<ShopElement data={data}/>} />c
-                <Route path="signin" element={<SignIn />} />
-                <Route path="signup" element={<SignUp />} />
-                <Route path="/" element={<Main filterData={filterData} dataArray={dataArray} setDataArray={setDataArray} data={data} />} />
-                <Route path="*" element={<ErrorElement />} />
-            </Routes>
+            <StateContext.Provider value={values}>
+                <Header addedToBasket={addedToBasket} setAddedToBasket={setAddedToBasket} value={value} inputSearch={inputSearch} data={data} dataArray={dataArray} setDataArray={setDataArray} />
+                <Routes>
+                    <Route path="recommended" element={<Recommended filterData={filterData} dataArray={dataArray} setDataArray={setDataArray} data={data} />} />
+                    <Route path="feature" element={<Feature filterData={filterData} dataArray={dataArray} setDataArray={setDataArray} data={data} />} />
+                    <Route path="shop" element={<Shop addedToBasket={addedToBasket} setAddedToBasket={setAddedToBasket} filterData={filterData} dataArray={dataArray} setDataArray={setDataArray} data={data} />} />
+                    <Route path="shop/:id" element={<ShopElement data={data} />} />c
+                    <Route path="signin" element={<SignIn />} />
+                    <Route path="signup" element={<SignUp />} />
+                    <Route path="/" element={<Main filterData={filterData} dataArray={dataArray} setDataArray={setDataArray} data={data} />} />
+                    <Route path="*" element={<ErrorElement />} />
+                </Routes>
+                <Footer/>
+            </StateContext.Provider>
         </div>
     )
 }

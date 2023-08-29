@@ -40,7 +40,6 @@ function Basket({addedToBasket, setAddedToBasket, open, setOpen, dataArray, setD
         } else {
             document.body.style.overflowY = 'visible';
         }
-
         return () => {
             document.body.style.overflowY = 'visible';
         };
