@@ -2,7 +2,6 @@
     width: 175px;
     height: 230px;
     border: 1px solid #ece9e9;
-    /* border: 1px solid red; */
     cursor: pointer;
     position: relative;
     transition: 1s;
@@ -54,6 +53,11 @@
 
 .shopAbout p{
     margin: 0;
+    color: black;
+}
+
+*{
+    text-decoration: none;
 }
 
 .shopButton{

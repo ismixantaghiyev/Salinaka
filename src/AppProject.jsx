@@ -9,6 +9,7 @@ import Shop from './Pages/Shop/Shop'
 import Feature from './Pages/Feature/Feature'
 import Recommended from './Pages/Recommended/Recommended'
 import ErrorElement from './ErrorElement'
+import ShopElement from './Pages/Shop/shopElement/ShopElement'
 
 
 function AppProject() {
@@ -130,13 +131,12 @@ function AppProject() {
                 <Route path="recommended" element={<Recommended filterData={filterData} dataArray={dataArray} setDataArray={setDataArray} data={data} />} />
                 <Route path="feature" element={<Feature filterData={filterData} dataArray={dataArray} setDataArray={setDataArray} data={data} />} />
                 <Route path="shop" element={<Shop addedToBasket={addedToBasket} setAddedToBasket={setAddedToBasket} filterData={filterData} dataArray={dataArray} setDataArray={setDataArray} data={data}/>} />c
+                <Route path="shop/:id" element={<ShopElement data={data}/>} />c
                 <Route path="signin" element={<SignIn />} />
                 <Route path="signup" element={<SignUp />} />
                 <Route path="/" element={<Main filterData={filterData} dataArray={dataArray} setDataArray={setDataArray} data={data} />} />
                 <Route path="*" element={<ErrorElement />} />
-
             </Routes>
-            <Footer />
         </div>
     )
 }

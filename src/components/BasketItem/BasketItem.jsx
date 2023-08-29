@@ -14,12 +14,11 @@ const itemisi = {
     }
 }
 
-function BasketItem({addedToBasket, setAddedToBasket, quantity, name, img, price, size, id, dataArray, setDataArray }) {
+function BasketItem({ quantity, name, img, price, size, id, dataArray, setDataArray }) {
 
     const deleteItem = () => {
         const filterData = dataArray.filter(item => item.id != id)
         setDataArray(filterData)
-        setAddedToBasket(false)
     }
 
     const plus = () => {
