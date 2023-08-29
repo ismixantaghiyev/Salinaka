@@ -1,9 +1,10 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import "./ShopElement.css"
 import { StateContext } from '../../../AppProject'
 
 function ShopElement({ data }) {
+    useEffect(()=> window.scrollTo(0, 0), [])
     const { dataArray, setDataArray } = useContext(StateContext)
     const { id } = useParams()
     const findData = data.find(item => item.id == id)
