@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom'
 
 function Logo() {
     return (
-        <div className='logo'>
-            <Link to="/">
+        <Link to="/">
+            <div className='logo'>
                 {/* <img src={LogoImg} alt="" /> */}
-            </Link>
-        </div>
+            </div>
+        </Link>
     )
 }
 

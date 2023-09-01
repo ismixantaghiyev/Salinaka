@@ -52,7 +52,7 @@ function BasketItem({ quantity, name, img, price, size, id, dataArray, setDataAr
                     <div className="basketItemColorSize">
                         <div><p>Quantity</p><span>{quantity}</span></div>
                         <div><p>Size</p><span>{size}</span></div>
-                        <div><p>Color</p><span>red</span></div>
+                        <div className='colorBasket'><p>Color</p><span>red</span></div>
                     </div>
                 </div>
                 <div className="price">

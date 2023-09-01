@@ -17,16 +17,15 @@ const itemisi = {
     }
 }
 
-function ShopItem({message, setMessage, setFilter, price, name, category, img, dataArray, setDataArray, size, id }) {
+function ShopItem({ message, setMessage, setFilter, price, name, category, img, dataArray, setDataArray, size, id }) {
 
     const { setActive } = useContext(StateContext)
 
     const addBasket = () => {
         setActive(true)
-        setTimeout(()=>{
-        setActive(false)
-
-        },1500)
+        setTimeout(() => {
+            setActive(false)
+        }, 1500)
         const product = dataArray.find(item => item.name === name);
         if (product) {
             product.quantity += 1;
@@ -42,10 +41,10 @@ function ShopItem({message, setMessage, setFilter, price, name, category, img, d
 
     const shopDelete = () => {
         setActive(true)
-        setTimeout(()=>{
-        setActive(false)
+        setTimeout(() => {
+            setActive(false)
 
-        },1500)
+        }, 1500)
         const shopFilter = dataArray.filter(item => item.id !== id)
         setDataArray(shopFilter);
         setMessage(false)
@@ -53,7 +52,6 @@ function ShopItem({message, setMessage, setFilter, price, name, category, img, d
     }
 
     const activeData = dataArray.find(item => item.id == id)
-
 
     const cardClick = () => {
         setFilter(false)
@@ -64,7 +62,8 @@ function ShopItem({message, setMessage, setFilter, price, name, category, img, d
             <motion.div
                 variants={itemisi}
                 onClick={cardClick}
-                style={{ border: activeData?.status ? "1px solid #A4A3A3" : "1px solid #ece9e9" }} className='shopAll'>
+                style={{ border: activeData?.status ? "1px solid #A4A3A3" : "1px solid #ece9e9" }} 
+                className='shopAll'>
                 <Link to={`/shop/` + id}>
                     <div className="shopImg">
                         <img src={img} alt={name} />

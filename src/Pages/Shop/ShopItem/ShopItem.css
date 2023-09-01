@@ -100,7 +100,11 @@
     color: #3B9620;
 }
 
-
+@media only screen and (max-width:768px){
+    .shopAll{
+        width: 159px;
+    }
+}
 
 
 

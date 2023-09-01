@@ -128,6 +128,7 @@ function AppProject() {
 
     const values = {
         dataArray,
+        setDataArray,
         active,
         setActive
     };

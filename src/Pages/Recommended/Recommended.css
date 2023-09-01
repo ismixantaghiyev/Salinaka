@@ -52,3 +52,19 @@
     width: 78%;
     margin: 0 auto;
 }
+
+
+@media only screen and (max-width:768px){
+    .rocommendedContainer{
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    .recommendedImg{
+        width: 100%;
+    }
+    .recommendedStyle{
+        width: 91%;
+    }
+}

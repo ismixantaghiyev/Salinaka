@@ -93,3 +93,17 @@
 .basketDeleteBtn button:hover{
     background-color: #cccccc2c;
 }
+
+
+
+@media only screen and (max-width:768px){
+    .price{
+        margin-left: 0px;
+    }
+    .basketDeleteBtn{
+        margin-left: 10px;
+    }
+    .colorBasket{
+        display: none;
+    }
+}
