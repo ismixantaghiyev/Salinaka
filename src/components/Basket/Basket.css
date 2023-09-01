@@ -104,7 +104,9 @@
     .basketContainer{
         width: 93%;
     }
-    .BasketCart{
-        width: 361px;
+
+    .basketbutton{
+        display: flex;
     }
+
 }

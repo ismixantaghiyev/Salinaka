@@ -50,7 +50,7 @@ function Basket({addedToBasket, setAddedToBasket, open, setOpen, dataArray, setD
                         <div className='basketItem'>
                             <h3>My Basket</h3> <span>({totalItem} item)</span>
                         </div>
-                        <div>
+                        <div className='basketbutton'>
                             <button onClick={click}>Close</button>
                             <button style={{ cursor: dataArray.length == 0 ? 'no-drop' : 'pointer' , color: dataArray.length != 0 ? "black" : "#A4A4A4"}} onClick={() => setDataArray([])} >Clear Basket</button>
                         </div>
