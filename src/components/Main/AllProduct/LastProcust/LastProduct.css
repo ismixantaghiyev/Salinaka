@@ -20,3 +20,23 @@
 .recommendedProducts p{
     color: black;
 }
+
+@media only screen and (max-width:768px){
+    .recommendedProducts h1{
+        font-size: 21px;
+    }
+    .recommendedProducts{
+        display: flex;
+        justify-content: space-around;
+        gap: 30px;
+    }
+    .recommendedProducts p{
+        font-weight: 500;
+    }
+    .lastProduct{
+        margin-top: -100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

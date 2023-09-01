@@ -17,3 +17,25 @@
 .featuredProducts p{
     color: black;
 }
+
+
+@media only screen and (max-width:768px){
+    .featuredProducts h1{
+        font-size: 25px;
+        
+    }
+    .featuredProducts{
+        display: flex;
+        justify-content: space-around;
+        gap: 30px;
+    }
+    .featuredProducts p{
+        font-weight: 600;
+    }
+    .firstProduct{
+        margin-top: -100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

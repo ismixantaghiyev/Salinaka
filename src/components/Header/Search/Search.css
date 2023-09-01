@@ -66,3 +66,20 @@
     font-size: 16px;
     padding: 5px 0 0 5px;
 }
+
+
+@media only screen and (max-width:768px){
+    .search{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .inp{
+        height: 44px;
+        margin-bottom: 10px;
+    }
+    .count{
+        right:22px;
+        top: 64px;
+    }
+}

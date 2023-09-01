@@ -4,7 +4,7 @@ import "./Footer.css"
 function Footer() {
     return (
         <div className='footer'>
-        <div className='footerContainer' style={{margin:"0 auto", width:"90%"}}>
+            <div className='footerContainer' style={{ margin: "0 auto", width: "90%" }}>
                 <div>
                     <div><p>Developed by Ismixan Taghiyev</p></div>
                 </div>

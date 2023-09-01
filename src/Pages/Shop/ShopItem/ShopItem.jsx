@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import "./ShopItem.css"
 import { LiaCheckSolid } from "react-icons/lia";
 import { motion } from "framer-motion";
 import { Link } from 'react-router-dom';
+import { StateContext } from '../../../AppProject';
 
 
 const itemisi = {
@@ -16,35 +17,54 @@ const itemisi = {
     }
 }
 
-function ShopItem({ price, name, category, img, dataArray, setDataArray, size, id }) {
+function ShopItem({message, setMessage, setFilter, price, name, category, img, dataArray, setDataArray, size, id }) {
 
+    const { setActive } = useContext(StateContext)
 
     const addBasket = () => {
-        const productIndex = dataArray.findIndex(index => index.name === name)
-        if (productIndex !== -1) {
-            setDataArray(prev => {
-                prev[productIndex].quantity += 1
-                setDataArray([...prev])
-            })
+        setActive(true)
+        setTimeout(()=>{
+        setActive(false)
+
+        },1500)
+        const product = dataArray.find(item => item.name === name);
+        if (product) {
+            product.quantity += 1;
+            setDataArray(prev => [...prev]);
+            localStorage.setItem("dataArray", JSON.stringify(dataArray))
         }
         else {
+            setMessage(true)
+            console.log(message);
             setDataArray(prev => [...prev, { name, category, img, quantity: 1, price, size, id, status: true }])
         }
     }
 
     const shopDelete = () => {
+        setActive(true)
+        setTimeout(()=>{
+        setActive(false)
+
+        },1500)
         const shopFilter = dataArray.filter(item => item.id !== id)
         setDataArray(shopFilter);
+        setMessage(false)
+        console.log(message);
     }
 
     const activeData = dataArray.find(item => item.id == id)
 
+
+    const cardClick = () => {
+        setFilter(false)
+    }
+
     return (
         <>
-
             <motion.div
                 variants={itemisi}
-                style={{ border: activeData?.status ? "1px solid #A4A3A3" : "1px solid #ece9e9", boxShadow: activeData?.status ? "rgba(149, 157, 165, 0.2) 0px 8px 24px;" : "none" }} className='shopAll'>
+                onClick={cardClick}
+                style={{ border: activeData?.status ? "1px solid #A4A3A3" : "1px solid #ece9e9" }} className='shopAll'>
                 <Link to={`/shop/` + id}>
                     <div className="shopImg">
                         <img src={img} alt={name} />

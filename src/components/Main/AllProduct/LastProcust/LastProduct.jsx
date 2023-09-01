@@ -15,7 +15,6 @@ function LastProduct({ data, setDataArray, dataArray, filterData }) {
                 </div>
             </div>
             {filterData.slice(6, 12).map(item => <Card key={item.id} {...item} dataArray={dataArray} setDataArray={setDataArray} {...item}/>)}
-
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import "./BasketItem.css"
 import { motion } from "framer-motion";
 
@@ -24,24 +24,22 @@ function BasketItem({ quantity, name, img, price, size, id, dataArray, setDataAr
     const plus = () => {
         setDataArray(prevData =>
             prevData.map(item => (item.id === id ? { ...item, quantity: item.quantity + 1 } : item))
-
         );
     };
 
     const minus = () => {
         setDataArray(prevData =>
-            prevData.map(item =>
-                item.id === id && item.quantity !== 1 ? { ...item, quantity: item.quantity - 1 } : item
-            )
+            prevData.map(item => (item.quantity !== 1 ? { ...item, quantity: item.quantity - 1 } : item))
         );
     };
+
 
 
     return (
         <div>
             <motion.div
-            variants={itemisi}
-            className="BasketCart">
+                variants={itemisi}
+                className="BasketCart">
                 <div className='basketItemCountBtn'>
                     <button onClick={plus}>+</button>
                     <button onClick={minus} style={{ cursor: quantity == 1 ? 'no-drop' : 'pointer' }} >-</button>

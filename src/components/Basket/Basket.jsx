@@ -22,9 +22,6 @@ function Basket({addedToBasket, setAddedToBasket, open, setOpen, dataArray, setD
     if (dataArray.length > 0) {
         for (let i = 0; i < dataArray.length; i++) {
             subTotal += dataArray[i].price * dataArray[i].quantity
-        }
-
-        for (let i = 0; i < dataArray.length; i++) {
             totalItem += dataArray[i].quantity
         }
     }
@@ -55,7 +52,7 @@ function Basket({addedToBasket, setAddedToBasket, open, setOpen, dataArray, setD
                         </div>
                         <div>
                             <button onClick={click}>Close</button>
-                            <button style={{ cursor: dataArray.length == 0 ? 'no-drop' : 'pointer' }} onClick={() => setDataArray([])} >Clear Basket</button>
+                            <button style={{ cursor: dataArray.length == 0 ? 'no-drop' : 'pointer' , color: dataArray.length != 0 ? "black" : "#A4A4A4"}} onClick={() => setDataArray([])} >Clear Basket</button>
                         </div>
                     </div>
                     <motion.div

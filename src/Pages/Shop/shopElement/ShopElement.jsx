@@ -8,7 +8,6 @@ function ShopElement({ data }) {
     const { dataArray, setDataArray } = useContext(StateContext)
     const { id } = useParams()
     const findData = data.find(item => item.id == id)
-    console.log(findData);
     const [selected, setSelected] = useState(false)
 
     const name = findData.name;
@@ -18,7 +17,7 @@ function ShopElement({ data }) {
     const img = findData.img;
 
     const reng = () => {
-        setSelected(true)
+        setSelected(!selected)
     }
     const colors = [
         { name: 'black', selected: false },
@@ -30,7 +29,6 @@ function ShopElement({ data }) {
         { name: 'green', selected: false },
     ];
 
-    console.log(dataArray);
     const addBasket = () => {
         const productIndex = dataArray.findIndex(index => index.name === name)
         if (productIndex !== -1) {
@@ -61,7 +59,7 @@ function ShopElement({ data }) {
                         <small>{findData.category}</small>
                         <h1>{findData.name}</h1>
                         <p>Lorem Corrupti, deleniti! Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus dicta rerum assumenda iusto quidem veritatis quo voluptatem eius natus dolore.</p>
-                        <hr />
+                        <hr style={{border:"1px solid #ccc"}}/>
                         <p>Lens Width and Frame Size</p>
                         <select name="" id="">
                             <option value="">—Select Size—</option>

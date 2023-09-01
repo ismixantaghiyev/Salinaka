@@ -2,7 +2,7 @@ import React from 'react'
 import "./Navbar.css"
 import { Link, NavLink } from 'react-router-dom'
 
-function Navbar({setState, filter, setFilter}) {
+function Navbar({setState, setFilter}) {
     const shopClick =()=>{
         setState(1)
         setFilter(true)

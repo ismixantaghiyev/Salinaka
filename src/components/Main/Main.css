@@ -2,3 +2,10 @@
     width: 78%;
     margin: 0 auto;
 }
+
+@media only screen and (max-width:768px){
+    .main{
+        width: 100%;
+        /* margin: 0 auto; */
+    }
+}

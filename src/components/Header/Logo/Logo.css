@@ -1,9 +1,22 @@
 .logo{
     width: 150px;
     height: 55px;
+    background-image: url("../../../images/logo.png");
+    background-size: cover;
 }
 
 .logo img{
     width: 100%;
     height: 100%;
+}
+
+@media only screen and (max-width:768px){
+    .logo{
+        display: flex;
+        justify-content: flex-start;
+        background-image: url("../../../images/responsive.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        mix-blend-mode: darken;
+    }
 }

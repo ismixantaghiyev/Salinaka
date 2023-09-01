@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext, useState } from 'react'
 import Header from './components/Header/Header'
 import Main from './components/Main/Main'
 import Footer from './components/Footer/Footer'
@@ -13,7 +13,13 @@ import ShopElement from './Pages/Shop/shopElement/ShopElement'
 
 export const StateContext = createContext();
 function AppProject() {
-    const [dataArray, setDataArray] = useState([])
+    const [message, setMessage] = useState(false)
+    const [active, setActive] = useState(false)
+
+
+    const datas = JSON.parse(localStorage.getItem("dataArray"))
+    const [dataArray, setDataArray] = useState(datas || [])
+    localStorage.setItem("dataArray", JSON.stringify(dataArray))
     const data = [
         {
             size: "24mm",
@@ -122,24 +128,28 @@ function AppProject() {
 
     const values = {
         dataArray,
-        setDataArray,
+        active,
+        setActive
     };
+
+    const [filter, setFilter] = useState(false)
+
 
     return (
         <div>
             <StateContext.Provider value={values}>
-                <Header addedToBasket={addedToBasket} setAddedToBasket={setAddedToBasket} value={value} inputSearch={inputSearch} data={data} dataArray={dataArray} setDataArray={setDataArray} />
+                <Header message={message} setMessage={setMessage}  filter={filter} setFilter={setFilter} addedToBasket={addedToBasket} setAddedToBasket={setAddedToBasket} value={value} inputSearch={inputSearch} data={data} dataArray={dataArray} setDataArray={setDataArray} />
                 <Routes>
                     <Route path="recommended" element={<Recommended filterData={filterData} dataArray={dataArray} setDataArray={setDataArray} data={data} />} />
                     <Route path="feature" element={<Feature filterData={filterData} dataArray={dataArray} setDataArray={setDataArray} data={data} />} />
-                    <Route path="shop" element={<Shop addedToBasket={addedToBasket} setAddedToBasket={setAddedToBasket} filterData={filterData} dataArray={dataArray} setDataArray={setDataArray} data={data} />} />
+                    <Route path="shop" element={<Shop message={message} setMessage={setMessage} filter={filter} setFilter={setFilter} addedToBasket={addedToBasket} setAddedToBasket={setAddedToBasket} filterData={filterData} dataArray={dataArray} setDataArray={setDataArray} data={data} />} />
                     <Route path="shop/:id" element={<ShopElement data={data} />} />
                     <Route path="signin" element={<SignIn />} />
                     <Route path="signup" element={<SignUp />} />
                     <Route path="/" element={<Main filterData={filterData} dataArray={dataArray} setDataArray={setDataArray} data={data} />} />
                     <Route path="*" element={<ErrorElement />} />
                 </Routes>
-                <Footer/>
+                <Footer />
             </StateContext.Provider>
         </div>
     )

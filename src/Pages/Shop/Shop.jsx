@@ -14,7 +14,7 @@ const containerisi = {
     }
 }
 
-function Shop({ addedToBasket, setAddedToBasket, data, dataArray, setDataArray, filterData }) {
+function Shop({message, setMessage, setFilter, data, dataArray, setDataArray, filterData }) {
     useEffect(() => window.scrollTo(0, 0), [])
 
     return (
@@ -27,7 +27,7 @@ function Shop({ addedToBasket, setAddedToBasket, data, dataArray, setDataArray, 
             animate="visible"
             variants={containerisi}
             className="shopContainer">
-                {filterData.map(item => <ShopItem addedToBasket={addedToBasket} setAddedToBasket={setAddedToBasket} key={item.id} data={data} dataArray={dataArray} setDataArray={setDataArray} {...item} />)}
+                {filterData.map(item => <ShopItem message={message} setMessage={setMessage} setFilter={setFilter} key={item.id} data={data} dataArray={dataArray} setDataArray={setDataArray} {...item} />)}
             </motion.div>
         </motion.div>
     )

@@ -56,3 +56,31 @@
     height: 46px;
     border: 1px solid black;
 }
+
+@media only screen and (max-width:768px){
+    .imgContainer{
+        display: flex;
+        flex-direction: column;
+        right: 0px;
+        height: 100%;
+    }
+    .textPadding p{
+        font-size: 45px;
+        width: 300px;
+        margin-bottom: 0px;
+    }
+    .textPadding small{
+        width: 300px;
+        display: block;
+        font-size: 17px;
+    }
+    .textPadding{
+        padding: 0px 0px 0px 30px ;
+        gap: 20px;
+    }
+    .imgQiz{
+        /* background-color: red; */
+        width: 100%;
+        margin-top: 50px;
+    }
+}
