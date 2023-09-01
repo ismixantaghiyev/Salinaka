@@ -68,6 +68,7 @@
 }
 
 
+
 @media only screen and (max-width:768px){
     .search{
         display: flex;
@@ -79,7 +80,16 @@
         margin-bottom: 10px;
     }
     .count{
-        right:22px;
-        top: 64px;
+        right:-12px;
+        top: -8px;
+    }
+    .basketIconss{
+        position: relative;
+        top: -70px;
+        right: 50px;
+    }
+
+    .inp input{
+        width: 310px;
     }
 }

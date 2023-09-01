@@ -108,5 +108,8 @@
     .basketbutton{
         display: flex;
     }
-
+    .empty p{
+        padding-left: 95px;
+        font-size: 17px;
+    }
 }
