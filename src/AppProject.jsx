@@ -137,7 +137,7 @@ function AppProject() {
 
 
     return (
-        <div>
+        <div style={{overflow:"hidden"}}>
             <StateContext.Provider value={values}>
                 <Header message={message} setMessage={setMessage}  filter={filter} setFilter={setFilter} addedToBasket={addedToBasket} setAddedToBasket={setAddedToBasket} value={value} inputSearch={inputSearch} data={data} dataArray={dataArray} setDataArray={setDataArray} />
                 <Routes>

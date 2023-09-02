@@ -17,8 +17,8 @@
     font-size: 14px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     position: absolute;
-    top: 32px;
-    right: 257px;
+    top: -14px;
+    right: -12px;
     border-radius: 50%;
     background-color: red;
     width: 20px;
@@ -33,6 +33,12 @@
     top: 10px;
     margin: 0 auto;
     padding-left: 6px;
+}
+
+.basketIconss{
+    position: relative;
+    z-index: 1;
+
 }
 
 .filter{
@@ -74,22 +80,27 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 100%;
+    }
+    .dFlex{
+        width: 100%;
     }
     .inp{
         height: 44px;
         margin-bottom: 10px;
+        width: 100%;
     }
-    .count{
-        right:-12px;
-        top: -8px;
-    }
-    .basketIconss{
-        position: relative;
-        top: -70px;
-        right: 50px;
+    .inp input{
+        width: 100%;
     }
 
-    .inp input{
-        width: 310px;
+    .basketIconss{
+        top: -60px;
+    }
+    .inputFlex{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
     }
 }

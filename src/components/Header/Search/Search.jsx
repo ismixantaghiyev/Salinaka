@@ -11,12 +11,13 @@ function Search({ addedToBasket, setAddedToBasket, dataArray, setDataArray, inpu
     const [open, setOpen] = useState(false)
     const click = () => {
         setOpen(!open)
+        console.log("salam");
     }
     let count = dataArray.length;
 
 
     const filterClick = () => {
-        console.log("salam");
+        
     }
 
     return (

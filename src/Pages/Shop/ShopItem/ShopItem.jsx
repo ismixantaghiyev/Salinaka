@@ -34,7 +34,6 @@ function ShopItem({ message, setMessage, setFilter, price, name, category, img, 
         }
         else {
             setMessage(true)
-            console.log(message);
             setDataArray(prev => [...prev, { name, category, img, quantity: 1, price, size, id, status: true }])
         }
     }
@@ -48,7 +47,6 @@ function ShopItem({ message, setMessage, setFilter, price, name, category, img, 
         const shopFilter = dataArray.filter(item => item.id !== id)
         setDataArray(shopFilter);
         setMessage(false)
-        console.log(message);
     }
 
     const activeData = dataArray.find(item => item.id == id)

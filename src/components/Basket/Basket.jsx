@@ -44,7 +44,7 @@ function Basket({addedToBasket, setAddedToBasket, open, setOpen, dataArray, setD
 
     return (
         <div>
-            <div style={{ right: open ? "0" : "-600px" }} className='basket'>
+            <div style={{ transform: open ? "translate(0)" : "translate(100%)" }} className='basket'>
                 <div className="basketContainer">
                     <div className="basketHeader">
                         <div className='basketItem'>

@@ -3,7 +3,8 @@
     height: 100vh;
     background-color: white;
     position: absolute;
-    right: -600px;
+    right: 0;
+    transform: translate(100%);
     top: 0px;
     z-index: 999;
     transition: .5s ease-in-out;
